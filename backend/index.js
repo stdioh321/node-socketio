@@ -7,6 +7,7 @@ const dotEnv = require('dotenv')
 
 const envPath = `${__dirname}/../.env`
 const EN_CONNECTED = 'en-connected'
+const EN_CONNECTED2 = 'en-connected2'
 
 dotEnv.config({
   path: envPath
@@ -37,6 +38,9 @@ const io = socketIo(server,{
 
 io.on('connect', (socket) => {
   console.log(`SocketIO connected ${socket.id}`);
+  setInterval(() => {
+      io.to(socket.id).emit(EN_CONNECTED2, crypto.randomUUID())
+  },1000)
 })
 
 server.listen(PORT, () =>{
