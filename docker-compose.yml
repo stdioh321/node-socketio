@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  backend:
+    container_name: backend
+    # image: node:16-alpine
+    build:
+      dockerfile: ./infra/Dockerfile.back
+      context: .
+    network_mode: host
+  frontend:
+    container_name: frontend
+    # image: node:16-alpine
+    build:
+      dockerfile: ./infra/Dockerfile.front
+      context: .
+    network_mode: host
+    depends_on:
+      - backend

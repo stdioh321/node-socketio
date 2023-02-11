@@ -1,0 +1,28 @@
+{
+  "name": "socketio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:back": "nodemon backend/index.js",
+    "start:front": "npx http-server ./frontend/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stdioh321/node-socketio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stdioh321/node-socketio/issues"
+  },
+  "homepage": "https://github.com/stdioh321/node-socketio#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "socket.io": "^4.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
